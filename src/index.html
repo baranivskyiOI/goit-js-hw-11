@@ -8,9 +8,22 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <ul>
-      <li><a href="./1-gallery.html">Gallery</a></li>
-      <li><a href="./2-form.html">Form</a></li>
-    </ul>
+    <script src="main.js" defer type="module"></script>
+    <div class="container">
+      <form class="form">
+        <label>
+          <input
+            type="text"
+            class="text-input"
+            name="search-text"
+            placeholder="Search images..."
+            required
+          />
+        </label>
+        <button class="submit-btn" type="submit">Search</button>
+      </form>
+      <span class="loader"></span>
+      <ul class="card-list"></ul>
+    </div>
   </body>
 </html>
