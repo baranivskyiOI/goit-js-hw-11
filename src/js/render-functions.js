@@ -1,4 +1,4 @@
-const imagesList = document.querySelector('.card-list');
+const imagesList = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
 function IMGelement(
