@@ -1,3 +1,8 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+let lightbox;
+
 const imagesList = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
@@ -48,7 +53,6 @@ function IMGelements(imgs) {
         webformatURL,
         tags
       );
-      // console.log(comments, likes, views, downloads, previewURL, tags);
     })
     .join('\n');
 }
@@ -67,4 +71,13 @@ export function hideLoader() {
 export function createGallery(imgArr) {
   clearGallery();
   imagesList.innerHTML = IMGelements(imgArr);
+
+  if (!lightbox) {
+    lightbox = new SimpleLightbox('.card a', {
+      captionsData: 'alt',
+      captionDelay: 250,
+    });
+  } else {
+    lightbox.refresh();
+  }
 }
